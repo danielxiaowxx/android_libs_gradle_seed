@@ -1,3 +1,7 @@
+## 项目介绍
+
+该项目为开发android组件库的种子项目，所有组件为单独的子项目，提供发布到自己的hosted nexus maven仓库的功能
+
 ## 开始使用
 
 1. 根据实际情况修改根项目的gradle.properties
