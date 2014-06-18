@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.8.+'
+    }
+}
+
+def isReleaseBuild() {
+    return version.contains("SNAPSHOT") == false
+}
+
+def getRepositoryUrl() {
+    if (isReleaseBuild()) {
+        println 'RELEASE BUILD'
+        return publishRepositoryRelease
+    } else {
+        println 'DEBUG BUILD'
+        return publishRepositorySnapshot
+    }
+}
+
+allprojects {
+
+    repositories {
+        mavenCentral()
+    }
+}

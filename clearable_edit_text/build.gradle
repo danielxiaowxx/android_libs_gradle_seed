@@ -1,0 +1,39 @@
+apply plugin: 'android-library'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 16
+        versionCode 1
+        versionName '1.0'
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:+'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+
+// ========= upload to maven repository ========= //
+
+
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: getRepositoryUrl()) {
+                authentication(userName: nexusUsername, password: nexusPassword)
+            }
+
+            pom.artifactId = pomArtifactId
+        }
+    }
+}
+
+
+
