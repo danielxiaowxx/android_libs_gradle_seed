@@ -1,1 +1,1 @@
-include ':lib', ':clearable_edit_text', ':demo'
+include ':clearable_edit_text', ':demo', ':socket.io-java-client'

@@ -35,7 +35,7 @@ public class ClearableEditText extends EditText {
 
     private Drawable clearableIcon;
 
-    private boolean isClearableIconShow = false;
+    private boolean isClearableIconShow = true;
 
     public ClearableEditText(Context context) {
         super(context);
