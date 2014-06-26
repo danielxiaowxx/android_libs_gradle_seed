@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License. 
  */
-package com.dx.widget;
+package com.dx.widget.edittext;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -101,6 +100,7 @@ public class ClearableEditText extends EditText {
                 if (motionEvent.getX() > clearableEditText.getWidth() - clearableEditText.getPaddingRight() - clearableIcon.getIntrinsicWidth()) {
                     clearableEditText.setText("");
                     setClearIconVisibleStatue();
+                    motionEvent.setAction(MotionEvent.ACTION_CANCEL); // 取消事件，使默认行为不会发生
                 }
 
                 return false;

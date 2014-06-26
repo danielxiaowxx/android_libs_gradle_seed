@@ -5,16 +5,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.8.+'
+        classpath 'com.android.tools.build:gradle:+'
     }
 }
 
-def isReleaseBuild() {
+def isReleaseBuild(version) {
     return version.contains("SNAPSHOT") == false
 }
 
-def getRepositoryUrl() {
-    if (isReleaseBuild()) {
+def getRepositoryUrl(version) {
+    if (isReleaseBuild(version)) {
         println 'RELEASE BUILD'
         return publishRepositoryRelease
     } else {

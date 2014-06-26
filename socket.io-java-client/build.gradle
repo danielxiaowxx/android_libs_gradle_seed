@@ -16,7 +16,7 @@ apply plugin: 'maven'
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: getRepositoryUrl()) {
+            repository(url: getRepositoryUrl(version)) {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
 

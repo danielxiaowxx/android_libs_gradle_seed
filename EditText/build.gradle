@@ -2,13 +2,14 @@ apply plugin: 'android-library'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.3"
-
+    buildToolsVersion '19.1.0'
     defaultConfig {
         minSdkVersion 8
         targetSdkVersion 16
         versionCode 1
         versionName '1.0'
+    }
+    productFlavors {
     }
 }
 
@@ -26,7 +27,8 @@ apply plugin: 'maven'
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: getRepositoryUrl()) {
+
+            repository(url: getRepositoryUrl(version)) {
                 authentication(userName: nexusUsername, password: nexusPassword)
             }
 
