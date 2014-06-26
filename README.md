@@ -28,7 +28,7 @@
 	- 在AndroidManifest.xml中声明该Activiy为启动Activity，并把该activity放在其它activity的前面（确保第一个启动是它），如下所示。
 
 	        <activity
-	            android:name=".TestClearEditTextActivity"
+	            android:name=".TestEditTextActivity"
 	            android:label="@string/clearable_edit_text" >
 	            <intent-filter>
 	                <action android:name="android.intent.action.MAIN" />
