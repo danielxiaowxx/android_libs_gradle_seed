@@ -4,7 +4,7 @@
 
 ## 开始使用
 
-先全局搜索替换，把android_libs_gradle_seed和com.dx替换成你喜欢的值，如用EmEditor将android_libs_gradle_seed全局替换成common_librady, com.dx替换成com.daniel
+先全局搜索替换，把android\_libs\_gradle\_seed和com.dx替换成你喜欢的值，如用EmEditor将android\_libs\_gradle\_seed全局替换成common\_librady, com.dx替换成com.daniel
 
 1. 根据实际情况修改根项目的gradle.properties
 
@@ -23,7 +23,7 @@
 			    compile fileTree(dir: 'libs', include: ['*.jar'])
 			}
 
-	- 新增测试组件的场景元素，如TestEditTextActivity和activity_test_edit_text.xml
+	- 新增测试组件的场景元素，如TestEditTextActivity和activity\_test\_edit\_text.xml
 
 	- 在AndroidManifest.xml中声明该Activiy为启动Activity，并把该activity放在其它activity的前面（确保第一个启动是它），如下所示。
 
@@ -35,3 +35,7 @@
 	                <category android:name="android.intent.category.LAUNCHER" />
 	            </intent-filter>
 	        </activity>
+
+4. 发布组件
+
+	编辑组件项目中的gradle.properties，修改version版本号，执行gradle task:uploadArchives
